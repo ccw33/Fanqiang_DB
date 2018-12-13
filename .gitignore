@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+# Created by .ignore support plugin (hsz.mobi)
+=======
+
+
+.idea
+log/*
+venv
+
+
+
+>>>>>>> gitignore
+
