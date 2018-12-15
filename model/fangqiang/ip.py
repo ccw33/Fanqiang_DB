@@ -44,8 +44,8 @@ class Fanqiang(base.Base):
 
 
 if __name__ == "__main__":
-    f = Fanqiang()
-    a = list(f.query().sort([('time', pymongo.ASCENDING)]))
+    # a = list(Fanqiang().query().sort([('time', pymongo.ASCENDING)]))
+    a = list(Fanqiang().query())
     # f.save({
     #     "proxy_type": "socks5",
     #     "ip_with_port": "50.62.35.225:1111",

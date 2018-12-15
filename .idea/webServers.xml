@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="7b8c47c2-72b4-4b9d-9991-905ed7f10ec7" name="腾讯云数据库服务" url="http://119.29.134.163">
+      <webServer id="484ae257-d595-4b65-a4a6-dbfb01fd0f8f" name="FanqiangMongoService" url="http://119.29.134.163">
         <fileTransfer host="119.29.134.163" port="9051" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />

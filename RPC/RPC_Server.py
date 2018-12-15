@@ -28,10 +28,27 @@ import sys
 server = SimpleXMLRPCServer(("0.0.0.0", 9017), requestHandler=RequestHandler,allow_none=True)
 server.register_introspection_functions()
 
+def ip_port_list(method_with_params_list,length=None):
+    '''
+    将非基本数据类型转成基本数据类型(_id)
+    :param method_with_params_list:
+    :param length:
+    :return:
+    '''
+    data = to_list(method_with_params_list,length)
+    for d in data:
+        d['_id'] = str(d['_id'])
+    return data
 
+def to_list(method_with_params_list,length=None):
+    '''
 
-def to_list(method_with_params_list):
-    return list(run(method_with_params_list))
+    :param method_with_params_list:
+    :param length: 防止list过大导致传不了
+    :return:
+    '''
+    return_data = list(run(method_with_params_list))
+    return return_data[:length] if length else return_data
 
 def run(method_with_params_list):
     '''
@@ -58,7 +75,7 @@ def run(method_with_params_list):
     params_list = method_with_params_list[1]
     try:
         current_step = None
-        logger.info('-------------------处理 {0}'.format(method))
+        logger.info('-------------------处理 {0}，参数：{1}'.format(method,params_list))
         first_method = method.split('.')[0]
         first_method_name = first_method.replace('()', '')
         # 判断是否已经注册该方法/类
@@ -85,6 +102,7 @@ def run(method_with_params_list):
 
 server.register_function(lambda : 'aaa',name='a')
 server.register_function(to_list)
+server.register_function(ip_port_list)
 server.register_function(run)
 server.register_multicall_functions()
 

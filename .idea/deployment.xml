@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="腾讯云数据库服务">
+  <component name="PublishConfigData" autoUpload="Always" serverName="FanqiangMongoService">
     <serverData>
-      <paths name="腾讯云数据库服务">
+      <paths name="FanqiangMongoService">
         <serverdata>
           <mappings>
             <mapping deploy="/root/Fanqiang_DB" local="$PROJECT_DIR$" web="/" />
